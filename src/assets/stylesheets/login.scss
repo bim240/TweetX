@@ -1,0 +1,159 @@
+.login_container {
+  height: 100vh;
+  width: 100vh;
+  // background-image: url("https://image.flaticon.com/icons/svg/1087/1087420.svg");
+  background-repeat: no-repeat;
+  margin-left: 3rem;
+
+  .tweetx {
+    margin: 2rem 0 2rem 0;
+    font-size: 2.5rem;
+    color: $primary;
+  }
+  .link_signup_btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+    padding: 0.7rem 2rem;
+    background-color: transparent;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+    color: inherit;
+  }
+  .heading {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 900;
+    color: inherit;
+  }
+
+  .email,
+  .password {
+    display: block;
+    // height: 2rem;
+    width: 19rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: #cfdad842;
+    padding: 1rem;
+    color: inherit;
+    border-radius: 5px;
+  }
+  .last_section {
+    display: flex;
+    justify-content: space-between;
+    width: 19rem;
+    p {
+      font-size: 0.8rem;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+      padding: 0.6rem 1.5rem;
+      background-color: $primary;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: 900;
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .login_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 10%;
+    align-items: center;
+    flex-direction: column;
+
+    // background-image: url("https://image.flaticon.com/icons/svg/1087/1087420.svg");
+    background-repeat: no-repeat;
+    margin: 4rem 0 0 0;
+    .back_btn {
+      position: absolute;
+      align-self: flex-start;
+      left: 2rem;
+      font-size: 2rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .tweetx {
+      display: none !important;
+    }
+    .link_signup_btn {
+      display: none;
+    }
+    .heading {
+      font-size: 1.5rem;
+      margin: 0 0 4rem 0;
+      font-weight: normal;
+      color: inherit;
+    }
+    .login_discription {
+      line-height: 1.5;
+      color: inherit;
+      margin-bottom: 5rem;
+      font-size: 0.9rem;
+    }
+    .email,
+    .password {
+      display: block;
+      // height: 2rem;
+      width: 100%;
+      margin-bottom: 2.5rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: inherit;
+      border-radius: 8px;
+      border: 2px solid rgba(128, 128, 128, 0.233);
+    }
+    .last_section {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      p {
+        display: none;
+        font-size: 1rem;
+        color: inherit;
+      }
+      button {
+        cursor: pointer;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: $primary;
+        border: none;
+        font-size: 1.2rem;
+        outline: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: normal;
+      }
+    }
+    .reset_password {
+      margin-top: 7rem;
+      color: $primary;
+      // font-weight: 700;
+      font-size: 1.1rem;
+    }
+  }
+}
+@media all and (min-width: 500.1px) {
+  .login_container {
+    .reset_password,
+    .back_btn,
+    .login_discription {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "./reset.scss";
+$primary: #fc6565;
+$text_color: rgba(32, 32, 32, 0.801);
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgba(32, 32, 32, 0.801);
+}
+
+@import "./lonin_signup.scss";
+@import "./signup.scss";
+@import "./login.scss";
+// @import "./"
