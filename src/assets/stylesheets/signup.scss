@@ -7,7 +7,7 @@
   .tweetx {
     margin: 2rem 0 2rem 0;
     font-size: 2.5rem;
-    color: #e57a91;
+    color: $primary;
   }
   .link_login_btn {
     display: inline-block;
@@ -53,7 +53,7 @@
     text-align: right;
     cursor: pointer;
     padding: 0.6rem 1.5rem;
-    background-color: #e57a91;
+    background-color: $primary;
     border: none;
     outline: none;
     border-radius: 4px;
@@ -141,6 +141,17 @@
       span {
         color: $primary;
       }
+    }
+  }
+}
+
+@media all and (min-width: 500.1px) {
+  .signup_container {
+    .reset_password,
+    .back_btn,
+    .signup_discription,
+    .confirm_conditions {
+      display: none;
     }
   }
 }
