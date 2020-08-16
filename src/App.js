@@ -11,7 +11,7 @@ import Header from "./component/auth/Header";
 function App(props) {
   useEffect(() => {
     if (localStorage["jwt-token"]) {
-      props.dispatch(getUserInfo(props));
+      props.dispatch(getUserInfo());
     }
   }, []);
   let { userInfo, isAuthInProgress } = props;
@@ -25,6 +25,7 @@ function App(props) {
             <Route exact path="/feed" component={LoginAndSignup} />
             <Route path="/users" component={Login} />
             <Route path="/profile" component={SignUp} />
+            <Route path="*" component={LoginAndSignup} />
           </Switch>
         </>
       ) : userInfo && isAuthInProgress ? (

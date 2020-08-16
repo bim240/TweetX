@@ -1,5 +1,5 @@
 let url = "https://conduit-api357.herokuapp.com/api/v1/";
-function getUserInfo(props) {
+function getUserInfo() {
   return function (dispatch) {
     dispatch({ type: "USER_AUTH_IN_PROGRESS" });
     fetch(`${url}user`, {
@@ -14,7 +14,6 @@ function getUserInfo(props) {
         console.log(res);
         if (res.user) {
           dispatch({ type: "USER_AUTH_SUCCESS", payload: res.user });
-          props.history.push("/feed");
         } else {
           dispatch({ type: "USER_AUTH_FAILED" });
         }
