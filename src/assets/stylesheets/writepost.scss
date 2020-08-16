@@ -1,4 +1,162 @@
 .write_post_container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $background_color;
   .write_post_subcontainer {
+    padding-top: 2rem !important;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 0;
+    .header_section {
+      display: flex;
+      justify-content: space-between;
+      .back_btn,
+      .btn_close {
+        font-size: 2rem;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .write_post {
+      margin: auto;
+      width: 80%;
+      height: 10rem;
+      margin-top: 2rem !important;
+      outline: none;
+      border: 1px solid rgba(128, 128, 128, 0.555);
+      background-color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: inherit;
+      font-family: "Roboto", sans-serif;
+    }
+    .input_container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 2rem;
+      .add_caption,
+      .add_location,
+      .tag_prople {
+        flex: 1;
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.8rem;
+        border: none;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px $shadow_color;
+      }
+      .icon {
+        position: absolute;
+        right: 0.5rem;
+        z-index: 2;
+        font-size: 1.5rem;
+        vertical-align: middle;
+        color: inherit;
+      }
+    }
+    .submit_post {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: $primary;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      vertical-align: middle;
+      .icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .write_post_container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $background_color;
+    .write_post_subcontainer {
+      padding-top: 2rem !important;
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem 0 0;
+      .header_section {
+        display: flex;
+        justify-content: space-between;
+        .back_btn,
+        .btn_close {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      .write_post {
+        margin: auto;
+        width: 90%;
+        height: 10rem;
+        margin-top: 2rem !important;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128, 0.555);
+        background-color: white;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: inherit;
+        font-family: "Roboto", sans-serif;
+      }
+      .input_container {
+        width: 95%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-top: 2rem;
+        .add_caption,
+        .add_location,
+        .tag_prople {
+          margin: auto;
+          width: 95%;
+          padding: 1rem;
+          font-size: 0.8rem;
+          border: none;
+          background-color: white;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px $shadow_color;
+        }
+        .icon {
+          position: absolute;
+          right: 0.5rem;
+          z-index: 2;
+          font-size: 1.5rem;
+          vertical-align: middle;
+          color: inherit;
+        }
+      }
+      .submit_post {
+        margin: auto;
+        width: 95%;
+        margin-top: 2rem;
+        padding: 0.8rem 1.5rem;
+        background-color: $primary;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        vertical-align: middle;
+        .icon {
+          margin-right: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }
