@@ -7,11 +7,13 @@ import Login from "./component/noAuth/Login";
 import SignUp from "./component/noAuth/SignUp";
 import { getUserInfo } from "./redux/action/userAction";
 import Header from "./component/auth/Header";
+import Feed from "./component/auth/Feed";
+import WritePost from "./component/auth/WrItePost";
 
 function App(props) {
   useEffect(() => {
     if (localStorage["jwt-token"]) {
-      props.dispatch(getUserInfo(Redirect));
+      // props.dispatch(getUserInfo(Redirect));
     }
   }, []);
   let { userInfo, isAuthInProgress } = props;
@@ -20,9 +22,10 @@ function App(props) {
     <div className="App" id="App">
       <Header />
       <Switch>
-        <Route exact path="/feed" component={LoginAndSignup} />
+        <Route exact path="/feed" component={Feed} />
         <Route path="/users" component={Login} />
         <Route path="/profile" component={SignUp} />
+        <Route path="/writepost" component={WritePost} />
         <Route path="*" component={LoginAndSignup} />
       </Switch>
       {/* {userInfo ? (
