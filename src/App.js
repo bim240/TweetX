@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import LoginAndSignup from "./component/noAuth/LoginAndSignup";
@@ -11,7 +11,7 @@ import Header from "./component/auth/Header";
 function App(props) {
   useEffect(() => {
     if (localStorage["jwt-token"]) {
-      // props.dispatch(getUserInfo());
+      props.dispatch(getUserInfo(Redirect));
     }
   }, []);
   let { userInfo, isAuthInProgress } = props;

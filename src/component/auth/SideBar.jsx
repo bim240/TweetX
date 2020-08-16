@@ -11,7 +11,7 @@ export default (props) => {
     // Pass on our props
     <Menu {...props}>
       <div className="user_info">
-        <img src={image} alt="image" />
+        <img src={image} alt="img" />
         <div className="name_email">
           <h2 className="name"> Bimlendu Kumar</h2>
           <p className="email">bimlendu357@gmail.com</p>
