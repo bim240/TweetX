@@ -20,14 +20,12 @@ function sendSignupRequest(data, cb, props) {
         if (res.user) {
           cb("Success", "success");
           props.history.push("/login");
-          // console.log(res);
         } else {
-          // dispatch({ type: "ADD_ERROR", error: res.err.body });
-          console.log(res, "error");
+          cb("Bad Request", "error");
         }
       })
       .catch((err) => {
-        console.log(err);
+        cb("Bad Request", "error");
       });
   };
 }
