@@ -11,14 +11,21 @@ import Header from "./component/auth/Header";
 function App(props) {
   useEffect(() => {
     if (localStorage["jwt-token"]) {
-      props.dispatch(getUserInfo());
+      // props.dispatch(getUserInfo());
     }
   }, []);
   let { userInfo, isAuthInProgress } = props;
   console.log(userInfo, isAuthInProgress);
   return (
-    <div className="App">
-      {userInfo ? (
+    <div className="App" id="App">
+      <Header />
+      <Switch>
+        <Route exact path="/feed" component={LoginAndSignup} />
+        <Route path="/users" component={Login} />
+        <Route path="/profile" component={SignUp} />
+        <Route path="*" component={LoginAndSignup} />
+      </Switch>
+      {/* {userInfo ? (
         <>
           <Header />
           <Switch>
@@ -36,7 +43,7 @@ function App(props) {
         </Switch>
       ) : (
         <h1>loading</h1>
-      )}
+      )} */}
     </div>
   );
 }

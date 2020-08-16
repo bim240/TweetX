@@ -1,12 +1,18 @@
 @import "./reset.scss";
 $primary: #fc6565;
 $text_color: rgba(32, 32, 32, 0.801);
+$background_color: #f5f5f54f;
+$shadow_color: #c7c7c779;
 body {
   font-family: "Roboto", sans-serif;
   color: rgba(32, 32, 32, 0.801);
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 @import "./lonin_signup.scss";
 @import "./signup.scss";
 @import "./login.scss";
 @import "./header.scss";
+@import "./sidebar.scss";
