@@ -36,7 +36,6 @@ const WrittenPost = (props) => {
 };
 
 function mapStateToProps(state) {
-  console.log(state.userInfo);
   return {
     image: state.userInfo.userInfo.image,
     name: state.userInfo.userInfo.username,
