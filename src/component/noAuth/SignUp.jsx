@@ -13,7 +13,8 @@ const SignUp = (props) => {
   let password = useRef(null);
   let repassword = useRef(null);
   let enqueueSnackbar = props.enqueueSnackbar;
-
+  let image =
+    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
   const showNotification = (text, varient) => {
     return enqueueSnackbar(text, {
       variant: varient,
@@ -43,6 +44,7 @@ const SignUp = (props) => {
       name: name.current,
       email: email.current,
       password: password.current,
+      image,
     };
     props.dispatch(sendSignupRequest(data, showNotification, props));
   };

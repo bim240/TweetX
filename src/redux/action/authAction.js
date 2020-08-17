@@ -11,6 +11,7 @@ function sendSignupRequest(data, cb, props) {
           username: data.name,
           email: data.email,
           password: data.password,
+          image: data.image,
         },
       }),
     })
@@ -47,7 +48,7 @@ function sendLoginRequest(data, cb, props) {
         if (res.user) {
           cb("Success", "success");
           localStorage.setItem("jwt-token", res.user.token);
-          props.history.push("/login");
+          props.history.push("/feed");
         } else {
           cb(res.error, "error");
         }

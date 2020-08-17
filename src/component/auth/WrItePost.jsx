@@ -6,11 +6,15 @@ import { GrEmoji } from "react-icons/gr";
 import { TiLocationOutline } from "react-icons/ti";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { connect } from "react-redux";
+import { requestCreatePost } from "../../redux/action/userAction";
 
 const WritePost = (props) => {
   let post = useRef("");
 
-  const handleSubmitPost = () => {};
+  const handleSubmitPost = () => {
+    props.dispatch(requestCreatePost(post.current));
+    props.history.push("/feed");
+  };
 
   return (
     <section className="write_post_container">

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
+import { connect } from "react-redux";
+import { getAllPost } from "../../redux/action/userAction";
 const Feed = (props) => {
-  let image =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
+  let { posts, image, name } = props;
+
   let dummyData = [
     { image, text: "hello testing", name: "bim" },
     { image, text: "hello testing", name: "bim" },
@@ -13,6 +15,9 @@ const Feed = (props) => {
     { image, text: "hello testing", name: "bim" },
     { image, text: "hello testing", name: "bim" },
   ];
+  useEffect(() => {
+    props.dispatch(getAllPost());
+  }, []);
   return (
     <section className="feed_Container">
       <NavLink className="new_post_icon" to="/writepost">
@@ -23,19 +28,19 @@ const Feed = (props) => {
           {" "}
           Write
         </NavLink>
-        {dummyData.map((feed, i) => {
+        {posts.map((post, i) => {
           return (
             <div className="single_feed" key={i}>
               <div className="feed_header_section">
                 <div className="sender_details">
-                  <img src={feed.image} className="sender_image" alt="img" />
+                  <img src={image} className="sender_image" alt="img" />
                   <div className="sender_time_name">
-                    <h5 className="sender_name">{feed.name}</h5>
+                    <h5 className="sender_name">{name}</h5>
                     <h6 className="time">10 min</h6>
                   </div>
                 </div>
               </div>
-              <div className="feed_body">{feed.text}</div>
+              <div className="feed_body">{post.body}</div>
             </div>
           );
         })}
@@ -44,4 +49,13 @@ const Feed = (props) => {
   );
 };
 
-export default Feed;
+function mapStateToProps(state) {
+  console.log(state.userInfo);
+  return {
+    image: state.userInfo.userInfo.image,
+    name: state.userInfo.userInfo.username,
+    posts: state.userInfo.posts,
+    // state1: state,
+  };
+}
+export default connect(mapStateToProps)(Feed);
