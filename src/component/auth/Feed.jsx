@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { connect } from "react-redux";
 import { getAllFeed } from "../../redux/action/feedAction";
+import { createTime } from "../../utils/createTime";
 const Feed = (props) => {
   let { feed } = props;
   let image =
@@ -36,7 +37,7 @@ const Feed = (props) => {
                     <h5 className="sender_name">
                       {singleFeed.author.username}
                     </h5>
-                    <h6 className="time">10 min</h6>
+                    <h6 className="time">{createTime(singleFeed.createdAt)}</h6>
                   </div>
                 </div>
               </div>

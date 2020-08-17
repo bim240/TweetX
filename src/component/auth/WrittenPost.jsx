@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllPost } from "../../redux/action/userAction";
+import { createTime } from "../../utils/createTime";
 const WrittenPost = (props) => {
   let { posts, image, name } = props;
   let image1 =
@@ -23,7 +24,7 @@ const WrittenPost = (props) => {
                 />
                 <div className="sender_time_name">
                   <h5 className="sender_name">{name}</h5>
-                  <h6 className="time">10 min</h6>
+                  <h6 className="time">{createTime(post.createdAt)}</h6>
                 </div>
               </div>
             </div>
