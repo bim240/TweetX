@@ -31,6 +31,7 @@ function sendSignupRequest(data, cb, props) {
 }
 function sendLoginRequest(data, cb, props) {
   return function (dispatch) {
+    dispatch({ type: "USER_AUTH_IN_PROGRESS" });
     fetch(`${url}users/login`, {
       method: "POST",
       headers: {
@@ -48,7 +49,8 @@ function sendLoginRequest(data, cb, props) {
         if (res.user) {
           cb("Success", "success");
           localStorage.setItem("jwt-token", res.user.token);
-          props.history.push("/feed");
+          dispatch({ type: "USER_AUTH_SUCCESS", payload: res.user });
+          // props.history.push("/feed");
         } else {
           cb(res.error, "error");
         }

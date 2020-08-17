@@ -37,6 +37,7 @@ const Login = (props) => {
       password: password.current,
     };
     props.dispatch(sendLoginRequest(data, showNotification, props));
+    props.history.push("/feed");
   };
   return (
     <section className="login_container">
