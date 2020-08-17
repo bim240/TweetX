@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 
 const SideBar = (props) => {
   let image =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
+    "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
 
   const handleRouteChange = (e) => {
     // e.preventDefault();

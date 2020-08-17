@@ -8,8 +8,7 @@ import Follow from "./Follow";
 const Profile = (props) => {
   let [activeTab, setActiveTab] = useState("post");
   let image =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
-
+    "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
   return (
     <section className="profile_container">
       <div className="profile_sub_container">

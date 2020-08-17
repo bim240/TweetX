@@ -6,7 +6,7 @@ import { requestFollowUser } from "../../redux/action/userAction";
 const Users = (props) => {
   let { allUserList, following } = props;
   let image =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
+    "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
 
   const handleFollowUser = (e, username, userid) => {
     console.log(e.target.textContent);

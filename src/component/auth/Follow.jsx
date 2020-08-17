@@ -1,7 +1,7 @@
 import React from "react";
 const Follow = (props) => {
   let image =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
+    "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
   let dummyData = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5];
   return (
     <section className="follow_container">

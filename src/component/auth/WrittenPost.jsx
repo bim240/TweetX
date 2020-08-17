@@ -4,16 +4,8 @@ import { getAllPost } from "../../redux/action/userAction";
 const WrittenPost = (props) => {
   let { posts, image, name } = props;
   let image1 =
-    "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
-  let dummyData = [
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-  ];
+    "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
+
   useEffect(() => {
     props.dispatch(getAllPost());
   }, []);
