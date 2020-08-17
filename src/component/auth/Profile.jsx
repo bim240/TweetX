@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TiEdit } from "react-icons/ti";
 import { RiUserFollowLine } from "react-icons/ri";
 import { GiPentagramRose } from "react-icons/gi";
 import WrittenPost from "./WrittenPost";
 import Follow from "./Follow";
 import { connect } from "react-redux";
+import { getAllFollowerFollowing } from "../../redux/action/followerFollowingAction";
 
 const Profile = (props) => {
   let [activeTab, setActiveTab] = useState("post");
-  let { userInfo } = props;
+  let { userInfo, allFollower, allFollowing } = props;
   let image =
     "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
+
+  useEffect(() => {
+    props.dispatch(getAllFollowerFollowing());
+  }, []);
   return (
     <section className="profile_container">
       <div className="profile_sub_container">
@@ -59,9 +64,9 @@ const Profile = (props) => {
         {activeTab === "post" ? (
           <WrittenPost />
         ) : activeTab === "followers" ? (
-          <Follow text={"followers"} />
+          <Follow data={allFollower} />
         ) : (
-          <Follow text={"followers"} />
+          <Follow data={allFollowing} />
         )}
         {/* <WrittenPost /> */}
       </div>
@@ -71,6 +76,8 @@ const Profile = (props) => {
 function mapStateToProps(state) {
   return {
     userInfo: state.userInfo.userInfo,
+    allFollower: state.allFollowerFollowing.allFollower,
+    allFollowing: state.allFollowerFollowing.allFollowing,
   };
 }
 

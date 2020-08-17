@@ -1,8 +1,8 @@
 let url = "https://conduit-api357.herokuapp.com/api/v1/";
 
-function getAllFeed() {
+function getAllFollowerFollowing() {
   return function (dispatch) {
-    fetch(`${url}articles/feed`, {
+    fetch(`${url}profiles//user/follower&following`, {
       method: "GET",
       headers: {
         "Content-Type": "Application/json",
@@ -11,8 +11,14 @@ function getAllFeed() {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.articles) {
-          dispatch({ type: "GOT_ALL_FEED", payload: res.articles });
+        if (res.allFollower) {
+          dispatch({
+            type: "GOT_ALL_FOLLOWER_FOLLOWING",
+            payload: {
+              allFollower: res.allFollower,
+              allFollowing: res.allFollowing,
+            },
+          });
         } else {
           console.log(res);
         }
@@ -23,4 +29,4 @@ function getAllFeed() {
   };
 }
 
-export { getAllFeed };
+export { getAllFollowerFollowing };
