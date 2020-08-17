@@ -1,16 +1,24 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllUserList } from "../../redux/action/allUserListAction";
+import { requestFollowUser } from "../../redux/action/userAction";
 
 const Users = (props) => {
-  let { allUserList } = props;
+  let { allUserList, following } = props;
   let image =
     "https://avatars2.githubusercontent.com/u/50172413?s=460&u=0573967b786828dda99a1efb64dff093fb654f08&v=4";
-  let dummyData = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5];
+
+  const handleFollowUser = (e, username, userid) => {
+    console.log(e.target.textContent);
+    if (e.target.textContent !== "Following") {
+      props.dispatch(requestFollowUser(username, userid));
+    }
+  };
 
   useEffect(() => {
     props.dispatch(getAllUserList());
   }, []);
+
   return (
     <section className="users_container">
       <div className="users_sub_container">
@@ -24,7 +32,11 @@ const Users = (props) => {
                   <br /> <small> Following : {user.following.length}</small>
                 </h3>
               </div>
-              <button className="follow_btn"> Follow</button>
+              <button
+                className="follow_btn"
+                onClick={(e) => handleFollowUser(e, user.username, user._id)}>
+                {following.includes(user._id) ? "Following" : "Follow"}
+              </button>
             </div>
           );
         })}
@@ -36,6 +48,7 @@ const Users = (props) => {
 function mapStateToProps(state) {
   return {
     allUserList: state.allUserList,
+    following: state.userInfo.userInfo.following,
   };
 }
 export default connect(mapStateToProps)(Users);

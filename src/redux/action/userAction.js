@@ -74,4 +74,28 @@ function getAllPost() {
       });
   };
 }
-export { getUserInfo, requestCreatePost, getAllPost };
+
+function requestFollowUser(username, userid) {
+  return function (dispatch) {
+    fetch(`${url}profiles/${username}/follow`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+        authorization: `${localStorage["jwt-token"]}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.profile) {
+          dispatch({ type: "ADD_FOLLOWING", payload: userid });
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+}
+
+export { getUserInfo, requestCreatePost, getAllPost, requestFollowUser };

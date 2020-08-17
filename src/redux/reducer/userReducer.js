@@ -15,6 +15,14 @@ export default function userReducer(state = initialState, action) {
       return { ...state, posts: state.posts.concat(action.payload) };
     case "ALL_ARTICLES":
       return { ...state, posts: action.payload };
+    case "ADD_FOLLOWING":
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
+          following: state.userInfo.following.concat(action.payload),
+        },
+      };
     default:
       return state;
   }
