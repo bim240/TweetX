@@ -1,0 +1,118 @@
+.profile_container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $background_color;
+  .profile_sub_container {
+    padding-top: 2rem !important;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 0;
+    .user_details_section {
+      width: 100%;
+      // border: 1px solid green;
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+      }
+      .user_details {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .user_name {
+          font-size: 1.1rem;
+          padding-bottom: 1rem;
+        }
+        .follower_post_following {
+          font-size: 0.7rem;
+          span {
+            margin-right: 0.7rem;
+          }
+        }
+      }
+    }
+    .current_tab {
+      margin-top: 3rem;
+      border-top: 1px solid gray;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .current_active_tab {
+        cursor: pointer;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+        .icon {
+          font-size: 0.9rem;
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .profile_container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $background_color;
+    .profile_sub_container {
+      padding-top: 2rem !important;
+      margin: auto;
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem 0 0;
+      .user_details_section {
+        width: 100%;
+        // border: 1px solid green;
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 1.5rem;
+        }
+        .user_details {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          .user_name {
+            font-size: 1.1rem;
+            padding-bottom: 1rem;
+          }
+          .follower_post_following {
+            font-size: 0.7rem;
+            span {
+              margin-right: 0.7rem;
+            }
+          }
+        }
+      }
+      .current_tab {
+        margin-top: 3rem;
+        border-top: 1px solid gray;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .current_active_tab {
+          cursor: pointer;
+          padding-top: 1rem;
+          font-size: 0.9rem;
+          .icon {
+            font-size: 0.9rem;
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}

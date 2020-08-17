@@ -9,6 +9,9 @@ import { getUserInfo } from "./redux/action/userAction";
 import Header from "./component/auth/Header";
 import Feed from "./component/auth/Feed";
 import WritePost from "./component/auth/WrItePost";
+import Profile from "./component/auth/Profile";
+import Follow from "./component/auth/Follow";
+import Users from "./component/auth/Users";
 
 function App(props) {
   useEffect(() => {
@@ -23,8 +26,8 @@ function App(props) {
       <Header />
       <Switch>
         <Route exact path="/feed" component={Feed} />
-        <Route path="/users" component={Login} />
-        <Route path="/profile" component={SignUp} />
+        <Route path="/users" component={Users} />
+        <Route path="/profile" component={Profile} />
         <Route path="/writepost" component={WritePost} />
         <Route path="*" component={LoginAndSignup} />
       </Switch>

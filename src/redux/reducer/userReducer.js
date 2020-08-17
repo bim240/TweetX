@@ -1,6 +1,7 @@
 let initialState = {
   isAuthInProgress: false,
   userInfo: null,
+  post: [],
 };
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
@@ -10,6 +11,8 @@ export default function userReducer(state = initialState, action) {
       return { ...state, isAuthInProgress: false, userInfo: action.payload };
     case "USER_AUTH_FAILED":
       return { ...state, isAuthInProgress: false };
+    case "ADD_NEW_POST":
+      return { ...state, post: state.post.concat(action.payload) };
     default:
       return state;
   }

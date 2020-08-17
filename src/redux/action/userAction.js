@@ -24,5 +24,35 @@ function getUserInfo(Redirect) {
       });
   };
 }
+function requestCreatePost(data) {
+  return function (dispatch) {
+    fetch(`${url}articles`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+        authorization: `${localStorage["jwt-token"]}`,
+      },
+      body: JSON.stringify({
+        article: {
+          title: "manga",
+          description: "Ever wonder how it is done?",
+          body: data,
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        if (res.article) {
+          dispatch({ type: "ADD_NEW_POST", payload: res.article });
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+}
 
-export { getUserInfo };
+export { getUserInfo, requestCreatePost };

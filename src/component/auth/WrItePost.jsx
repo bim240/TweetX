@@ -5,9 +5,13 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { GrEmoji } from "react-icons/gr";
 import { TiLocationOutline } from "react-icons/ti";
 import { RiSendPlaneLine } from "react-icons/ri";
+import { connect } from "react-redux";
 
 const WritePost = (props) => {
   let post = useRef("");
+
+  const handleSubmitPost = () => {};
+
   return (
     <section className="write_post_container">
       <div className="write_post_subcontainer">
@@ -21,6 +25,7 @@ const WritePost = (props) => {
           </NavLink>
         </div>
         <textarea
+          onChange={(e) => (post.current = e.target.value)}
           name="writePost"
           placeholder="Type here"
           maxLength="200"
@@ -45,7 +50,7 @@ const WritePost = (props) => {
           />
           <TiLocationOutline className="icon" />
         </div>
-        <NavLink to="/feed" className="submit_post">
+        <NavLink to="/feed" className="submit_post" onClick={handleSubmitPost}>
           {" "}
           <RiSendPlaneLine className="icon" />
           Post
@@ -55,4 +60,4 @@ const WritePost = (props) => {
   );
 };
 
-export default WritePost;
+export default connect()(WritePost);
