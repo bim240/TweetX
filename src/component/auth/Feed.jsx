@@ -6,15 +6,6 @@ import { getAllPost } from "../../redux/action/userAction";
 const Feed = (props) => {
   let { posts, image, name } = props;
 
-  let dummyData = [
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-    { image, text: "hello testing", name: "bim" },
-  ];
   useEffect(() => {
     props.dispatch(getAllPost());
   }, []);
@@ -55,7 +46,6 @@ function mapStateToProps(state) {
     image: state.userInfo.userInfo.image,
     name: state.userInfo.userInfo.username,
     posts: state.userInfo.posts,
-    // state1: state,
   };
 }
 export default connect(mapStateToProps)(Feed);
