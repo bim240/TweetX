@@ -10,7 +10,6 @@ import Header from "./component/auth/Header";
 import Feed from "./component/auth/Feed";
 import WritePost from "./component/auth/WrItePost";
 import Profile from "./component/auth/Profile";
-import Follow from "./component/auth/Follow";
 import Users from "./component/auth/Users";
 
 function App(props) {
