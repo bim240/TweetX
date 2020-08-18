@@ -20,7 +20,9 @@ const Follow = (props) => {
             </div>
             <button className="follow_btn">
               {" "}
-              {props.following.includes(singleData.id) ? "Following" : "Follow"}
+              {props.following && props.following.includes(singleData.id)
+                ? "Following"
+                : "Follow"}
             </button>
           </div>
         );

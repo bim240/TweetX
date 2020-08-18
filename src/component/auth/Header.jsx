@@ -34,7 +34,9 @@ const Header = (props) => {
   return (
     <header className="header_container">
       <div className="header_sub_container1">
-        <h1 className="heading">TweetX</h1>
+        <NavLink to="/feed" className="heading">
+          TweetX
+        </NavLink>
         <nav className="nav_container">
           <NavLink
             activeClassName="active_route"
