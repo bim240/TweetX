@@ -119,6 +119,8 @@
         }
       }
       .feed_body {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
         margin-left: 50px;
         font-size: 0.9rem;
         word-spacing: 1.5;
