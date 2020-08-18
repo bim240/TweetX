@@ -39,7 +39,11 @@ const SideBar = (props) => {
       <Link
         className="menu-item"
         to="/"
-        onClick={(() => localStorage.clear(), props.closeCallBack)}>
+        onClick={() => {
+          localStorage.clear();
+          props.closeCallBack();
+          window.location.reload();
+        }}>
         <GrLogout className="icon" />
         Sign Out
       </Link>

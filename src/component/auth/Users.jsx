@@ -35,7 +35,9 @@ const Users = (props) => {
               <button
                 className="follow_btn"
                 onClick={(e) => handleFollowUser(e, user.username, user._id)}>
-                {following.includes(user._id) ? "Following" : "Follow"}
+                {following && following.includes(user._id)
+                  ? "Following"
+                  : "Follow"}
               </button>
             </div>
           );

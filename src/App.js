@@ -23,14 +23,6 @@ function App(props) {
 
   return (
     <div className="App" id="App">
-      {/* <Header />
-      <Switch>
-        <Route exact path="/feed" component={Feed} />
-        <Route path="/users" component={Users} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/writepost" component={WritePost} />
-        <Route path="*" component={LoginAndSignup} />
-      </Switch> */}
       {userInfo ? (
         <>
           <Header />
@@ -42,7 +34,7 @@ function App(props) {
             <Route path="*" component={Feed} />
           </Switch>
         </>
-      ) : userInfo || (isAuthInProgress && localStorage["jwt-token"]) ? (
+      ) : isAuthInProgress || localStorage["jwt-token"] ? (
         <h1>loading</h1>
       ) : (
         <Switch>
