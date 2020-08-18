@@ -38,14 +38,15 @@
     }
     .header_sub_conatiner2 {
       height: 100%;
-      width: 93%;
+      width: 95%;
+      padding: 0;
 
       // border: 1px solid green;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      vertical-align: middle;
+
       .search_icon {
         font-size: 2rem;
       }

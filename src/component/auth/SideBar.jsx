@@ -1,69 +1,55 @@
 import React from "react";
-import { slide as Menu } from "react-burger-menu";
+import { Link } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import { IoIosList } from "react-icons/io";
 import { GrLogout } from "react-icons/gr";
 import { BsNewspaper } from "react-icons/bs";
-import { withRouter } from "react-router-dom";
-
-import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 const SideBar = (props) => {
-  let image =
+  let { image, username, email } = props.userInfo;
+  let image1 =
     "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png";
 
-  const handleRouteChange = (e) => {
-    // e.preventDefault();
-    // let route = e.target.href.split("/").slice(-1);
-    // console.log();
-    // console.log(`/${route[0]}`);
-    // props.history.push(e.target.href);
-    // console.log(props);
-  };
   return (
     // Pass on our props
-    <Menu {...props}>
+    <div className="menu">
       <div className="user_info">
-        <img src={image} alt="img" />
+        <img src={image ? image : image1} alt="img" />
         <div className="name_email">
-          <h2 className="name"> Bimlendu Kumar</h2>
-          <p className="email">bimlendu357@gmail.com</p>
+          <h2 className="name"> {username}</h2>
+          <p className="email">{email}</p>
         </div>
       </div>
-      <a
-        className="menu-item"
-        onClick={(e) => handleRouteChange(e)}
-        href="/profile">
+      <Link className="menu-item" onClick={props.closeCallBack} to="/profile">
         <FaRegUser className="icon" />
         My Profile
-      </a>
-      <a
-        className="menu-item"
-        onClick={(e) => handleRouteChange(e)}
-        href="/profile">
+      </Link>
+      <Link className="menu-item" onClick={props.closeCallBack} to="/feed">
         <BsNewspaper className="icon" />
         Feed
-      </a>
+      </Link>
 
-      <a
-        className="menu-item"
-        onClick={(e) => handleRouteChange(e)}
-        href="/users">
+      <Link className="menu-item" onClick={props.closeCallBack} to="/users">
         {" "}
         <IoIosList className="icon" />
         User List
-      </a>
+      </Link>
 
-      <a
+      <Link
         className="menu-item"
-        onClick={(e) => handleRouteChange(e)}
-        href="/"
-        onClick={() => localStorage.clear()}>
+        to="/"
+        onClick={(() => localStorage.clear(), props.closeCallBack)}>
         <GrLogout className="icon" />
         Sign Out
-      </a>
-    </Menu>
+      </Link>
+    </div>
   );
 };
 
-export default withRouter(SideBar);
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo.userInfo,
+  };
+}
+export default connect(mapStateToProps)(SideBar);
