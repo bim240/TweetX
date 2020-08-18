@@ -22,7 +22,7 @@ function createTime(time) {
   var hour = created_date.getHours();
   var min = created_date.getMinutes();
   var sec = created_date.getSeconds();
-  console.log(sec, min, hour, date);
+
   return year !== current_date.getFullYear()
     ? year
     : month !== months[current_date.getMonth()]
