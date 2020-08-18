@@ -15,7 +15,6 @@ const Header = (props) => {
   };
 
   const closeMenu = () => {
-    console.log("close clicked");
     setMenuOpen(false);
   };
 
@@ -59,7 +58,7 @@ const Header = (props) => {
       </div>
       <div className="header_sub_conatiner2" id="ham">
         <div>
-          <CheeseburgerMenu isOpen={menuOpen} closeCallBack={closeMenu}>
+          <CheeseburgerMenu isOpen={menuOpen} closeCallback={closeMenu}>
             <SideBar closeCallBack={closeMenu} />
           </CheeseburgerMenu>
           <HamburgerMenu
