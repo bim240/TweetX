@@ -14,6 +14,7 @@ function getUserInfo() {
         if (res.user) {
           dispatch({ type: "USER_AUTH_SUCCESS", payload: res.user });
         } else {
+          localStorage.clear();
           dispatch({ type: "USER_AUTH_FAILED" });
         }
       })
